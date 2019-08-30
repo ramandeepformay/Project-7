@@ -1,0 +1,142 @@
+@import"../css/normalize.css";
+html {
+    font-size: 62.5%;
+}
+/* 	#7277C2 #4D4A77 	#7BC78F 	#6CB2C1 	#B1B1B1*/
+/* body styling */
+.grid-container{
+    font-size: 1.6rem;
+    font-family: 'Livvic', sans-serif;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "main";
+}
+/* header styling */
+header{
+    grid-area:header;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: #7277C2;
+    color:white;
+    padding:15px;
+  
+}
+nav{
+    grid-area:nav;
+}
+main{
+    grid-area:main;
+}
+main{
+    display:grid;
+}
+/* app name styling */
+.app-name{
+    font-size:1.4rem;
+}
+.app-name span{
+    color:rgb(219, 214, 214);
+    font-weight:100;
+}
+/* info styling which is other half of header */
+.info{
+    margin-left: auto;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size:1.3rem;
+}
+.info > div{
+    margin:0px 5px; 
+}
+/* bell icon styling */
+.contain{
+    position:relative;
+}
+.info img[src="icons/icon-bell.svg"]{
+    border-right:2px solid black;
+    padding:10px; 
+    
+}
+.contain::after{
+    content:"";
+    position:absolute;
+    background:#7BC78F;
+    top:5px;
+    right:12px;
+    width:8px;
+    height:8px;
+    border:1px solid #7BC78F;
+    border-radius:50%;
+}
+/* profile image styling */
+.profile img{
+    border:1px solid black;
+    border-radius:50%;
+    margin-right:5px;
+    float:left;
+}
+.profile h3{
+  float:left;
+}
+/* nav styling */
+nav{
+    background:#4D4A77 ;
+   
+}
+nav ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+    max-width:300px;
+    margin:0 auto;
+}
+nav ul li{
+    display: inline-block;
+    padding:10px;
+}
+nav ul li:first-child{
+    border-bottom:3px solid #7BC78F;
+    padding-bottom:6px;
+    border-radius:2%;
+}
+nav ul li:hover{
+    border-bottom:3px solid #7BC78F;
+    padding-bottom:6px;
+    border-radius:2%;
+}
+/* main styling */
+.main-header{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+
+}
+.headline{
+    margin:0px;
+    padding:10px;
+    width:20%;
+    background:white;
+    flex-shrink:2;
+}
+.main-header-search{
+    /* margin-left:auto; */
+   
+    border:1px solid #B1B1B1;
+    background:#B1B1B1;
+   padding-left:20%;
+    border-bottom-left-radius:10px;
+  
+}
+.main-header-search input{
+    padding:5px 30px;
+    margin-top:20px;
+    margin-left:auto;
+}

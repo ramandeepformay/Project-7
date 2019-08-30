@@ -6,27 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <title>Document</title>
 </head>
-<body>
-    <>
+<body class="grid-container">
         <!-- header starts -->
-        <header >
-            <h1>YOUR<span>App</span><sup>TM</sup></h1>
-            <div>
-                <img src="icons/icon-bell.svg" width="50" height="50"/>
+        <header>
+            <div class="app-name">
+                <h1>Your<span>App<sup>TM</sup></span></h1>
+            </div>
+            <div class="info">
                 <div>
-                    <ul>
-                        <li>This is your first Message</li>
-                        <li>This is your second Message</li>
-                        <li>This is your third message</li>
-                    </ul>
+                    <div class="contain">
+                        <img src="icons/icon-bell.svg" width="50px" height="50px"/>
+                    </div>
+                    <div style="display: none">
+                        <ul>
+                            <li>This is your first Message</li>
+                            <li>This is your second Message</li>
+                            <li>This is your third message</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="profile clearfix">
+                    <img src="images/IMG_4924.JPG" alt="ramandeep singh formay" width="50" height="50"/>
+                    <h3>Ramandeep</h3>
                 </div>
             </div>
-            <div>
-                <img src="images/IMG_4924.JPG" alt="ramandeep singh formay" width="50" height="50"/>
-                <h3>Ramandeep Formay</h3>
-            </div>
+        </header>
+        <!-- header ends -->
+        <!-- nav starts -->
+        <nav>
+            <ul>
+                <li><a href="#"><img src="icons/icon-dashboard.svg" width="50px" height="50px"/></a></li>
+                <li><a href="#"><img src="icons/icon-members.svg" width="50px" height="50px"/></a></li>
+                <li><a href="#"><img src="icons/icon-visits.svg" width="50px" height="50px"/></a></li>
+                <li><a href="#"><img src="icons/icon-settings.svg" width="50px" height="50px"/></a></li>
+            </ul>
+        </nav>
+         <!-- nav ends -->
+        <!-- main starts -->
+        <main>
             <div class="main-header">
                 <h2 class="headline">Dashboard</h2>
                 <div class="main-header-search">
@@ -34,22 +54,6 @@
                 </div>
             </div>
             <div class="alert" id="alert">
-
-            </div>
-        </header>
-        <!-- header ends -->
-        <!-- nav starts -->
-        <nav>
-            <ul>
-                <li><a href="#"><img src="icons/icon-dashboard.svg"/></a></li>
-                <li><a href="#"><img src="icons/icon-members.svg"/></a></li>
-                <li><a href="#"><img src="icons/icon-visits.svg"/></a></li>
-                <li><a href="#"><img src="icons/icon-settings.svg"/></a></li>
-            </ul>
-        </nav>
-         <!-- nav ends -->
-        <!-- main starts -->
-        <main>
             <section class="traffic">
                 <div class="traffic-header">
                     <h3>Traffic</h3>
