@@ -155,9 +155,14 @@ input[type="search"]::placeholder{
     margin:10px;
     padding:0px 10px;
     color:white;
+    
+}
+.alert-banner p{
+    letter-spacing:1.5px;
 }
 .alert-banner-close{
     margin-left:auto;
+    cursor:pointer;
 }
 /* traffic container  */
 .traffic,.daily,.mobile,.social-container,.members,.recent-activity,.message,.settings,.social-networking{
