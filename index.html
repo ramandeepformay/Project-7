@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Livvic:300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/css-toggle-switch@latest/dist/toggle-switch-rem.css" />
     <link href="css/style.css" rel="stylesheet">
     <title>Document</title>
 </head>
@@ -237,6 +238,24 @@
 
                 <section class="settings">
                     <h3>Settings</h3>
+                    <label class=" switch-light  switch-ios" style="width: 100px" onclick="">
+                        <input type="checkbox">
+                       
+                        <strong>Send Email Notifications</strong>
+                        <span class="switch">
+                            <span>Off</span>
+                            <span>On</span>
+                        </span>
+            
+                    </label>
+                    <label class="switch-light switch-ios" onclick="">
+                        <input type="checkbox">
+                        <strong>Set Profile to Public</strong>
+                        <span>
+                            <span>Off</span>
+                            <span>On</span>
+                        </span>
+                    </label>
                     <div class="drop-down">
                         <select class="form-field" id="timezone">
                             <option disabled selected>Select a Timezone</option>
