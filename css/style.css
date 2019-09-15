@@ -5,15 +5,18 @@ html {
 /* 	#7277C2 #4D4A77 	#7BC78F 	#6CB2C1 	#B1B1B1*/
 /* body styling */
 .grid-container{
+
     font-size: 1.4rem;
     font-family: 'Livvic', sans-serif;
-    display: grid;
+    /* display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: auto;
+    grid-template-rows: 1fr; */
+    
     grid-template-areas: 
     "header"
     "nav"
     "main";
+   
 }
 /* header styling */
 header{
@@ -65,18 +68,68 @@ h3{
 .info img[src="icons/icon-bell.svg"]{
     border-right:2px solid black;
     padding:10px; 
+    cursor:pointer;
     
 }
+.notification{
+    position:absolute;
+    top:20px;
+    background:whitesmoke;
+    color:black;
+    z-index:2;
+   border:1px solid transparent;
+   border-radius:5px;
+    font-size:1rem;
+    top:40px;
+   right:1px;
+   display:block;
+}
+.notification span{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-around;
+    text-align: center;
+    
+}
+.notification span p{
+    font-size:1.2rem;
+    font-weight:bolder;
+    margin-right:10px;
+    cursor:pointer;
+}
+.notification h2{
+    display:inline;
+    width:220px;
+    text-transform:capitalize;
+    padding:5px 10px;
+    border-bottom: 2px solid #4D4A77; 
+}
+.notification ul{
+   list-style-type: decimal;
+   text-transform:capitalize;
+   margin: 0;
+   padding:0;
+}
+.notification ul li{
+    margin-left:20px;
+    margin-bottom:5px;
+    word-spacing:2px;
+    font-size:1.2rem;
+    padding-bottom:5px
+}
 .contain::after{
-    content:"";
+    content:"3";
     position:absolute;
     background:#7BC78F;
     top:5px;
-    right:12px;
-    width:8px;
-    height:8px;
+    right:10px;
+    width:10px;
+    height:10px;
     border:1px solid #7BC78F;
     border-radius:50%;
+    padding-left:4px;
+    font-size:0.6rem;
 }
 /* profile image styling */
 .profile img{
@@ -307,10 +360,24 @@ button{
 }
 switch-ios.switch-light > span{
     background-color: #B1B1B1;
+   
+}
+.switch-ios.switch-light > span span{
+    top:5px;
+    left:10px;
 }
 .switch-light span span {
-    text-align:left;
-    
+    text-align:left;   
+}
+.switch-light{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items:center;
+}
+.switch-light p{
+    margin-right:20px;
+    flex-basis:200px;
 }
 select{
     display: block;
@@ -332,6 +399,7 @@ select option{
 }
 .drop-down{
     position: relative;
+   
 }
 .drop-down::after{
     content:"\f107";
@@ -352,6 +420,7 @@ select option{
     flex-direction: row;
     justify-content: space-between;
     align-items:center;
+  margin-top:40px;
 }
 .settings-button button{
     width:45%;

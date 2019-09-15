@@ -16,6 +16,7 @@ alert.addEventListener("click", e=>{
 });
 // traffic chart
 const trafficCanvas = document.getElementById("traffic-chart");
+const listItems = document.querySelector(".traffic-nav").getElementsByTagName("li");
 let trafficData = {
     labels: [ "16-22" , "23-29" , "30-5" , "6-12" , "13-19" , "20-26" , "27-3" ,
     "4-10" , "11-17" , "18-24" , "25-31" ],
@@ -26,7 +27,18 @@ let trafficData = {
             borderWidth: 1
         }]
     };
-    
+
+    let trafficData2 = {
+        labels: [ "16-22" , "23-29" , "30-5" , "6-12" , "13-19" , "20-26" , "27-3" ,
+        "4-10" , "11-17" , "18-24" , "25-31" ],
+        datasets: [{
+                data: [ 500 , 650 , 100 , 200 , 1500 , 1750 , 1250 , 1850 , 2250 , 1500 ,
+                2500 ],
+                backgroundColor: 'rgba(116, 119, 191, .3)' ,
+                borderWidth: 1
+            }]
+        };
+
     let trafficOptions = {
         aspectRatio: 2.5,
         animation: {
@@ -48,8 +60,28 @@ let trafficData = {
         data: trafficData,
         options: trafficOptions
     });
+    function updateChart(){
+        trafficChart.data.datasets[0].data =[ 500 , 650 , 100 , 200 , 1500 , 1750 , 1250 , 1850 , 2250 , 1500 ,
+            2500 ] ;
+       trafficChart.update();
+    }
+   
+    
+   for(var i=0; i<listItems.length; i++){
+       listItems[2].addEventListener("click",()=>{
+          updateChart();
+       })
+   }
 
-//daily chart
+//     listItems.addEventListener("click",()=>{
+//     console.log("yes");
+//         let trafficChart = new Chart(trafficCanvas, {
+//             type: 'line' ,
+//             data: trafficData2,
+//             options: trafficOptions
+//         });
+// })
+
 const dailyCanvas = document.getElementById( "daily-chart" );
 const dailyData = {
         labels: [ "S" , "M" , "T" , "W" , "T" , "F" , "S" ],
@@ -133,4 +165,79 @@ send.addEventListener('click' , () => {
         message.user="";
     });
 
- //settings
+ //alert functionality
+ //firstly selecting contain class
+ const icon= document.querySelector(".contain");
+ icon.addEventListener("click", (event)=>{
+     //creating div element 
+    const div=document.createElement("div");
+    //adding innerHtml
+    let html = `
+    <div class="notification id="notify">
+    <span>
+        <h2>you have three notifications</h2>
+        <p>X</p>
+    </span>
+        <ul>
+            <li>1 new person is added</li>
+            <li>someone blocked his account</li>
+            <li>some one liked your page</li>
+        </ul>
+    </div>
+   `;
+    div.innerHTML =html;
+    if(event.target.tagName === "IMG"){
+        //adding div to the contain class
+      icon.appendChild(div);
+    }
+    else if(event.target.tagName==="P"){
+        //removing div from the contain class
+        icon.removeChild(icon.lastChild);
+    }
+    
+ });
+
+//  search for user
+let names=["Victoria Chambers", "Dale Byrd", "Dawn Wood", "Dan Oliver"]
+const search =document.querySelector("#userField");
+search.addEventListener("keyup", ()=>{
+    let input = search.value.toLowerCase();
+    const ul =document.createElement("UL");
+    
+    const li =document.createElement("LI");
+    for(let i =0; i<names.length; i++){
+        let namesSplit = names[i].toLowerCase().split(""); 
+       const form = document.querySelector(".widget-container");
+       
+       form.appendChild(ul);
+        
+       if(namesSplit.indexOf(input)>-1)
+       {
+        console.log(names[i]);
+      li.textContent=names[i];
+        
+       }
+       
+       else{
+           console.log("not found");
+       }
+     
+   
+    }
+    ul.appendChild(li);  
+})
+search.addEventListener("blur",()=>{
+
+    const form = document.querySelector(".widget-container ul");
+   if(event.target.tagName === "INPUT"){
+    const p = document.querySelectorAll("form ul")
+    for(var i=0; i<p.length; i++){
+        console.log(p[i]);
+p.style.display="none";
+    }
+
+   }
+})
+
+
+ 
